@@ -9,11 +9,11 @@ git config --global user.email "ben@ecoquants.com"
 git config --global user.name "Ben Best"
 git config --global push.default matching
 
-git remote add origin "https://${GH_TOKEN}@github.com/${GH_OWNER}/${GH_REPO}.git"
-
 # git commit
+git checkout ${GH_BRANCH}
 git add --all
 git commit -am "Travis render & push [skip ci]: $TRAVIS_BUILD_NUMBER"
 
 # git push
-git push -q origin HEAD:${GH_BRANCH}
+git remote add upstream "https://${GH_TOKEN}@github.com/${GH_OWNER}/${GH_REPO}.git"
+git push -q upstream ${GH_BRANCH}
