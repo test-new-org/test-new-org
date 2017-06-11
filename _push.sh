@@ -14,4 +14,4 @@ git add --all
 git commit -am "Travis render & push [skip ci]: $TRAVIS_BUILD_NUMBER"
 
 # git push
-git push https://${GH_TOKEN}@github.com/${GH_USER}/${GH_REPO}.git ${GH_BRANCH}
+git push https://${GH_TOKEN}@github.com/${GH_USER}/${GH_REPO}.git HEAD:${GH_BRANCH}
