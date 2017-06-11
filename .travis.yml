@@ -1,5 +1,4 @@
 language: ruby
-cache: bundler
 sudo: false
 before_script:
 - chmod +x ./_push.sh
