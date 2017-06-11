@@ -1,14 +1,8 @@
 language: ruby
 script: echo `Date` > index.md
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GH_TOKEN
-  target_branch: master
-  email: deploy@travis-ci.org
-  name: Deployment Bot
-  on:
-    branch: master
+before_script:
+- chmod +x ./_push.sh
+script: ./_push.sh
 env:
   global:
     secure: P0/9JASZx4uPhTsO62ecvNQxFhUc4zFJBBNIl2wkUpDThUPjGEXRKtMiOwqIUDuf7rzXus+xQ5DnsN/k5h4I//iihBg+EOlgMip3gPKYQymHRf/I0ppYz+C1eEJe/9qrBZKusXJG3bGf8cDKx0S5JXgWfEkkowqU4pb1G2UCZ0AWgOUVc4sTJ4ds4gWrWw9B76ce0CQSxVoa1gGT2PKj4RYxs0kuwDNmgZ24umX0tYxCu0JDvboRcEQ3PNygnqbxDGk80QgXsEkF+womP4WETnwOStaIlSza/JXv0JBIHHqBj2M5v1Gbyyz32mhNdtR7OTS2qWBSjvEDYoZX/V8GoPUe+5nvPIQlhS7Tn4gFgoi8oF/cETAERm9/6rIU4a9GxXksPUzSjy92AuAUulfPvZsIDCr4kUwFDppGOysnrzDTUHVUNbv0qxVz6+745uoh3/c0iqTJe+G79/G/IIqj0d/w7mhGXMMij+90gbQrF2mbNIJmXiUNmATst3OrKbJekPSqgt1LJUDa549ZyeiveFWbz4Po5VpDNgMVBHiMDwZAqhghtbShy5CJn5+hUywGM5Ec5+yp4aI0LLWwwHAQSnvZstHVsTmFd00HlNlEAL1UUxE5iUDXs92eFXHK16AmbtDXfTXCimT764F8KtHlJqZzEoMEsYpwukFndsBq4uc=
